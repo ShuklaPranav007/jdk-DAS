@@ -20,7 +20,7 @@ public class Search{
         return largest;
     }
 
-    // public static int BinarySearch(int num[],int key){
+    public static int BinarySearch(int num[],int key){
         int start = 0; 
         int end = num.length-1;
         while(start <= end){
