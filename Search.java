@@ -9,7 +9,7 @@ public class Search{
         return -1;
     }
 
-    // public static int getLargestValue(int num[]){
+    public static int getLargestValue(int num[]){
         int largest = Integer.MIN_VALUE;
         // int smallest = Integer.MAX_VALUE;
         for(int i=0;i<num.length;i++){
