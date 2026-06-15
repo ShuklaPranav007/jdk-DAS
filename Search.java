@@ -88,8 +88,37 @@ public class Search {
     //     }
     // }
 
+    public static void subArrayPrefix(int num[]) {
+        
+        int maxSum = Integer.MIN_VALUE;
+        int minSum = Integer.MAX_VALUE;
+        int prefix[] = new int[num.length];
+
+        prefix[0]= num[0];
+
+        // calculate prefix array
+        for(int i = 1;i<prefix.length;i++){
+            prefix[i]= prefix[i-1]+num[i];
+        }
+
+        for (int i = 0; i < num.length; i++) {
+            for (int j = i; j < num.length; j++) {
+                int sum = 0;
+                sum = i == 0 ? prefix[j]:prefix[j]-prefix[i-1];
+                maxSum = Math.max(maxSum,sum);
+                minSum = Math.min(minSum,sum);
+                System.out.print("sum : "+ sum);
+            
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("maxsub :"+ maxSum);
+        System.out.println("minsum: "+ minSum);
+    }
     public static void main(String[] args) {
         int num[] = {12,-3,64,87,-23,7,91};
         subArray(num);
+        subArrayPrefix(num);
     }
 }
