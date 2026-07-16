@@ -116,9 +116,24 @@ public class Search {
         System.out.println("maxsub :"+ maxSum);
         System.out.println("minsum: "+ minSum);
     }
+
+
+    public static void kadanes(int num[]){
+        int maxS = Integer.MIN_VALUE;
+        int currS = 0;
+
+        for(int i = 0; i<num.length;i++){
+            currS = currS+num[i];
+            if(currS<0){
+                currS = 0;
+            }
+            maxS = Math.max(currS, maxS);
+        }
+        System.out.println("maxS :"+ maxS);
+    }
+
     public static void main(String[] args) {
         int num[] = {12,-3,64,87,-23,7,91};
-        subArray(num);
-        subArrayPrefix(num);
+        kadanes(num);
     }
 }
