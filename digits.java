@@ -22,9 +22,26 @@ public class digits {
         }
         return rev;
     }
+   
+    public static int armStrong(int num){
+        int sum = 0;
+        int numOrg = num;
+        while(num>0){
+            int lastdig = num%10;
+            sum = sum+(lastdig*lastdig*lastdig);
+            num = num/10;
+        }
+        if(sum == numOrg){
+            return 1;
+        }else{
+            return 0;
+        }
+        
+    }
+   
     public static void main(String args[]){
-        int num = 13849800;
-        int revDig = revNum(num);
-        System.out.println(revDig);
+        int num = 371;
+        int armStrongNum = armStrong(num);
+        System.out.println(armStrongNum);
     }
 }
