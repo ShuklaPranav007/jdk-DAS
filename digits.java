@@ -7,14 +7,24 @@ public class digits {
         //     count++;
         // }
 
-        
+
         // digits with log
         int count = (int)(Math.log10(num))+1;
         return count;
     }
+
+    public static int revNum(int num){
+        int rev = 0;
+        while(num>0){
+            int lastdig = num%10;
+            rev = (rev*10)+lastdig;
+            num = num/10;
+        }
+        return rev;
+    }
     public static void main(String args[]){
-        int num = 138498;
-        int sumcoutnt = digCount(num);
-        System.out.println(sumcoutnt);
+        int num = 13849800;
+        int revDig = revNum(num);
+        System.out.println(revDig);
     }
 }
