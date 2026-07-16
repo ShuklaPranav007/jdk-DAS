@@ -1,13 +1,15 @@
 public class digits {
 
     public static int digCount(int num){
-        int rem = 0;
-        int count = 0;
-        while(num>0){
-            rem = num%10;
-            num = num/10;
-            count++;
-        }
+        // int count = 0;
+        // while(num>0){
+        //     num = num/10;
+        //     count++;
+        // }
+
+        
+        // digits with log
+        int count = (int)(Math.log10(num))+1;
         return count;
     }
     public static void main(String args[]){
