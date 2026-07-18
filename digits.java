@@ -39,9 +39,16 @@ public class digits {
         
     }
    
+    public static void printDiv (int number){
+        for(int i = 0;i<= Math.sqrt(number);i++){
+            if(number%i==0){
+                System.out.println(i + " ");
+            }
+        }
+    }
+
     public static void main(String args[]){
         int num = 371;
-        int armStrongNum = armStrong(num);
-        System.out.println(armStrongNum);
+        printDiv(36);
     }
 }
