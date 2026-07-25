@@ -1,3 +1,4 @@
+package array;
 
 public class Search {
 
@@ -124,7 +125,7 @@ public class Search {
 
         for(int i = 0; i<num.length;i++){
             currS = currS+num[i];
-            if(currS<0){
+            if(currS<0){   
                 currS = 0;
             }
             maxS = Math.max(currS, maxS);

@@ -1,4 +1,4 @@
-import java.util.*;
+package basic;
 
 public class app {
     private int balance  = 15000;

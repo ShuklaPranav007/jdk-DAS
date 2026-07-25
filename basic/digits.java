@@ -1,3 +1,4 @@
+package basic;
 public class digits {
 
     public static int digCount(int num){
