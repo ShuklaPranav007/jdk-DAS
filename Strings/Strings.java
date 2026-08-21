@@ -1,6 +1,12 @@
-import java.util.*;
 
 public class Strings {
+    public static String subString(String str, int start, int end){
+        String subStr = "";
+        for(int i = start;i<end;i++){
+            subStr += str.charAt(i);
+        }
+        return subStr;
+    }
 
     public static boolean isPalindrome(String str){
         int n = str.length();
@@ -11,15 +17,33 @@ public class Strings {
         }
         return true;
     }
+   
+    public static float  getShortestPath(String path){
+        int x = 0, y = 0;
+        for(int i=0;i<path.length();i++){
+            char dir = path.charAt(i);
+            if(dir == 'S') y--;
+            else if (dir == 'N') y++;
+            else if (dir == 'W') x--;
+            else{x++;}
+        }
+        float xm = x*x;
+        float ym = y*y;
+
+        return (float)Math.sqrt(xm+ym);
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str;
-        str = sc.nextLine();  
-        System.out.println(isPalindrome(str));
-
-        // length() is used in srings as function 
-        // arr.length is used a property in array
-        // System.out.println(name.length());
-
+        // Scanner sc = new Scanner(System.in);
+        String str = "Hello_World";
+        // System.out.println(isPalindrome(str));
+        // System.out.println(subString(str, 1, 7));
+        String path = "WNEENESENNN";
+        System.out.println(getShortestPath(path));
+        
     }
 }
+
+// length() is used in srings as function 
+// arr.length is used a property in array
+// System.out.println(name.length());
