@@ -34,12 +34,9 @@ public class Strings {
     }
 
     public static void main(String[] args) {
-        // Scanner sc = new Scanner(System.in);
         String str = "Hello_World";
-        // System.out.println(isPalindrome(str));
-        // System.out.println(subString(str, 1, 7));
         String path = "WNEENESENNN";
-        System.out.println(getShortestPath(path));
+        // System.out.println(getShortestPath(path));
         
     }
 }
