@@ -79,10 +79,45 @@ public class sortTwo {
         
     }
 
-    public static void main(String[] args) {
-        int arr[] = { 6, 8, 2, 4,-8, 9, 5,-2 };
-        // mergeSort(arr, 0, arr.length - 1);
-        quickSort(arr, 0, arr.length-1);
-        printArr(arr);
+
+    // rotated sorted array
+    public static int searchSorted(int arr[], int tar, int si, int ei){
+        if(si>ei){
+            return -1;
+        }
+
+        int mid = si+ (ei-si)/2;
+
+        if(arr[mid] == tar){
+            return mid;
+        }
+
+        // mid on l1
+        if(arr[si]<=arr[mid]){
+            if(arr[si]<=tar && tar<=arr[mid]){
+                return searchSorted(arr, tar, si, mid-1);
+            }else{
+                return searchSorted(arr, tar, mid+1, ei);
+            }
+        }else{
+            if(arr[mid]<= tar && tar <= arr[ei]){
+                return searchSorted(arr, tar, mid+1, ei);
+            }else{
+                return searchSorted(arr, tar, si, mid-1);
+            }
+        }
+
+        
     }
+
+    public static void main(String[] args) {
+        int arr[] = { 4,5,6,7,0,1,2 };
+        // mergeSort(arr, 0, arr.length - 1);
+        // quickSort(arr, 0, arr.length-1);
+        // printArr(arr);
+        int target = 1;
+        int tarIdx = searchSorted(arr, target, 0, arr.length);
+        System.out.println(tarIdx);
+    }
+
 }
