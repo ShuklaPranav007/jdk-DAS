@@ -61,17 +61,24 @@ public class recursion {
         return isFound;
     }
 
+    public static int countingTiles(int n){
 
+        if(n==1 || n==0){
+            return 1;
+        }
+        // vertically
+        int vert = countingTiles(n-1);
+
+        // horizontal
+        int hori = countingTiles(n-2);
+
+
+        return vert+hori;
+    }
 
 
     public static void main(String[] args) {
         int arr[] = {1,7,8,9,2,3,10,21,34,3,5,9,8,56,21};
-        // printDec(10);
-        // System.out.println(fact(4));
-        // System.out.println("sum : "+ sumRec(10));
-        // System.out.println(fibo(25));
-        // System.out.println(checkSortArray(arr, 0));
-        System.out.println(firtsOcc(arr, 3, 1));
-        System.out.println(lastOcc(arr, 3, 1));
+        System.out.println(countingTiles(4));
     }
 }
