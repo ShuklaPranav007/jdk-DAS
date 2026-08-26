@@ -29,10 +29,29 @@ public class recursion {
         }
         return fibo(n-1)+fibo(n-2);
     }
+
+    public static boolean  checkSortArray(int arr[],int i){
+        if(i==arr.length-1){
+            return true;
+        }
+        if(arr[i]>arr[i+1]){
+            return false;
+        }
+        return checkSortArray(arr, i+1);
+    }
+
+
+
+
+
+
+
     public static void main(String[] args) {
+        int arr[] = {1,2,3,4,5,6};
         // printDec(10);
         // System.out.println(fact(4));
         // System.out.println("sum : "+ sumRec(10));
-        System.out.println(fibo(25));
+        // System.out.println(fibo(25));
+        System.out.println(checkSortArray(arr, 0));
     }
 }
