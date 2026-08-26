@@ -66,14 +66,8 @@ public class recursion {
         if(n==1 || n==0){
             return 1;
         }
-        // vertically
-        int vert = countingTiles(n-1);
-
-        // horizontal
-        int hori = countingTiles(n-2);
-
-
-        return vert+hori;
+        
+        return countingTiles(n-1)+countingTiles(n-2);
     }
 
     public static void removeDuplicateString(String str, int idx, StringBuilder newStr, boolean map[]){
@@ -91,8 +85,19 @@ public class recursion {
         }
     }
 
+    public static int friendsPair(int n){
+        if(n==1 || n == 2){
+            return n;
+        }
+        return friendsPair(n-1) + (n-1)*friendsPair(n-2);
+    }
+
+
+    
     public static void main(String[] args) {
-        String str = "anpanaksnddncbvbc";
-        removeDuplicateString(str, 0, new StringBuilder(""), new boolean[26]);
+        // String str = "anpanaksnddncbvbc";
+        // removeDuplicateString(str, 0, new StringBuilder(""), new boolean[26]);
+        System.out.println(friendsPair(3));
+
     }
 }
