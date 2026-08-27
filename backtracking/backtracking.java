@@ -18,9 +18,22 @@ public class backtracking {
         }
         System.out.println();
     }
+
+    public static void findSubset(String str, int i, String newStr){
+        if(i== str.length()){
+            System.out.println(newStr);
+            return;
+        }
+
+        findSubset(str, i+1, newStr+str.charAt(i)); //yes choice
+        findSubset(str, i+1, newStr); //no choice
+    }
+
+
+
+    
     public static void main(String[] args) {
-        int arr[] = new int[5];
-        changeArr(arr, 0, 5);
-        printArray(arr);
+        String str = "abc";
+        findSubset(str, 0, "");
     }
 }
