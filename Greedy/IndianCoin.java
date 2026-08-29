@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class IndianCoin {
     public static void main(String[] args) {
         Integer coins[] = {1,2,5,10,20,50,100,500,1000,2000};
-        int amount = 2458;
+        int amount = 3458;
         int count = 0;
         Arrays.sort(coins, Comparator.reverseOrder());
         ArrayList<Integer> ans = new ArrayList<>();
